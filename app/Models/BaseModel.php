@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static Builder|BaseModel query()
  * @method static self first(string[] $columns = ['*'])
  * @method static Collection all(string[] $columns = ['*'])
+ * @method static static firstOrCreate(string[] $attributes, string[] $createAttributes = null)
  */
 class BaseModel extends Model
 {

@@ -16,12 +16,12 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('surname');
-            $table->string('patronymic');
+            $table->string('patronymic')->nullable();
             $table->foreignId('company_id')->nullable()->constrained();
             $table->string('phone');
             $table->string('email');
             $table->date('birth_date')->nullable();
-            $table->string('photo_name')->nullable();
+            $table->foreignId('photo_extension_id')->nullable()->constrained();
         });
     }
 

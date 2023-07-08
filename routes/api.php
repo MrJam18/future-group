@@ -1,19 +1,14 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\NoteBookController;
+
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('v1/notebook')->group(function () {
+    Route::get('/', [NoteBookController::class, 'getList']);
+    Route::post('/', [NoteBookController::class, 'create']);
+    Route::get('/{note}', [NoteBookController::class, 'getOne']);
+    Route::post('/{note}', [NoteBookController::class, 'update']);
+    Route::delete('/{note}', [NoteBookController::class, 'delete']);
 });

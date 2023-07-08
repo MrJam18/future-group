@@ -3,11 +3,14 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Models\Traits\RusTimeStamps;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Ramsey\Collection\Collection;
 
 /**
  * @property int $id;
  * @property string $name;
+ * @property Collection $notes;
  */
 class Company extends BaseModel
 {
@@ -18,6 +21,6 @@ class Company extends BaseModel
 
     function notes(): HasMany
     {
-        return $this->hasMany();
+        return $this->hasMany(Note::class);
     }
 }

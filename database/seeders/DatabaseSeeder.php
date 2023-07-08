@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\PhotoExtension;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,11 +13,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $model = new PhotoExtension();
+        $model->name = 'jpg';
+        $model->save();
+        $model = new PhotoExtension();
+        $model->name = 'pdf';
+        $model->save();
+        $model = new PhotoExtension();
+        $model->name = 'png';
+        $model->save();
     }
 }
