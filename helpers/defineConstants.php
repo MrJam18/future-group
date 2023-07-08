@@ -6,3 +6,4 @@ const RUS_DATE_FORMAT = 'd.m.Y';
 const RUS_DATE_TIME_FORMAT = 'd.m.Y H:i:s';
 const RUS_DATE_CAST = 'datetime:' . RUS_DATE_FORMAT;
 const RUS_DATE_TIME_CAST = 'datetime:' . RUS_DATE_TIME_FORMAT;
+const RUS_SYMBOL = '[\x{0430}-\x{044F}\x{0410}-\x{042F}]';

@@ -57,8 +57,8 @@ class NoteBookController extends Controller
     private function getNoteAsArray(Note $note): array
     {
         $array = $note->toArray();
-        $array['company'] = $note->company->name;
-        $array['photo_url'] = $note->photoExtension ? "/photo/$note->id.{$note->photoExtension->name}" : null;
+        $array['company'] = $note->company?->name;
+        $array['photo_url'] = $note->photoExtension ? "/storage/photo/$note->id.{$note->photoExtension->name}" : null;
         return $array;
     }
 }

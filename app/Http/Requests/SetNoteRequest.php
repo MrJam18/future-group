@@ -15,7 +15,7 @@ class SetNoteRequest extends FormRequest
     }
 
     /**
-     * fullname 2 or 3 words with at least 2 char
+     * fullname 2 or 3 words with at least 2 rus char
      * phone begin with + and contains 10 or 11 digits
      * birth_date in rus format
      *
@@ -23,8 +23,9 @@ class SetNoteRequest extends FormRequest
      */
     public function rules(): array
     {
+        $rusSymbol = RUS_SYMBOL;
         return [
-            'fullName' => ['required', 'string', 'regex:/(^\w{2,} \w{2,}$)|(^\w{2,} \w{2,} \w{2,}$)/'],
+            'fullName' => ['required', 'string', "regex:/(^$rusSymbol{2,} $rusSymbol{2,}$)|(^$rusSymbol{2,} $rusSymbol{2,} $rusSymbol{2,}$)/u"],
             'company' => ['string'],
             'phone' => ['required', 'regex:/^\+\d{10,11}$/'],
             'email' => ['required', 'email'],
